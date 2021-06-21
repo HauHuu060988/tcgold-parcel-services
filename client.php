@@ -2,7 +2,7 @@
 
 require_once __DIR__ . '/vendor/autoload.php';
 
-use App\Parcel;
+use Tcgold\Service\Parcel;
 
 $modelList = [1, 2, 4];
 $faker = Faker\Factory::create();

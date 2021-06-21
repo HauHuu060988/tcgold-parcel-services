@@ -1,8 +1,7 @@
 <?php
 
-namespace App;
+namespace Tcgold\Service;
 
-use Dotenv\Dotenv;
 
 /**
  * Class Parcel
@@ -20,9 +19,8 @@ class Parcel
      */
     public function __construct()
     {
-        $dotenv = Dotenv::create(dirname(__DIR__, 1));
-        $dotenv->load();
-        $this->host = getenv('API_HOST');
+//        $this->host = 'http://localhost/tcgold-parcel-apis/public';
+        $this->host = 'https://tcgold-parcel.newdhh.tk';
     }
 
     /**
@@ -132,7 +130,7 @@ class Parcel
         $ch = curl_init($url);
         curl_setopt($ch, CURLOPT_POST, false);
         curl_setopt($ch, CURLOPT_POSTFIELDS, $payload);
-        curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'put');
+        curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'PUT');
         curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json', $authorization));
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($ch, CURLOPT_HEADER, true);
@@ -193,7 +191,7 @@ class Parcel
 
         $ch = curl_init($url);
         curl_setopt($ch, CURLOPT_POST, false);
-        curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'delete');
+        curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'DELETE');
         curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json', $authorization));
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($ch, CURLOPT_HEADER, true);
