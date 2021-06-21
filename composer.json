@@ -1,0 +1,22 @@
+{
+    "name": "tcgold/parcel",
+    "description": "A simple composer package for parcel management",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Hau Huu",
+            "email": "daohuuhau0609@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    },
+    "require": {
+        "vlucas/phpdotenv": "^3.4",
+        "fzaninotto/faker": "^1.8"
+    }
+}
